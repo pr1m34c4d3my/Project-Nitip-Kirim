@@ -13,6 +13,7 @@ class Home extends CI_Controller {
 	{
 		$data['page_title'] = "Homepage";
 		$data['page'] = "home";
+		
 		$this->load->view('section/header');
 		$this->load->view('front/welcome_message',$data);
 		$this->load->view('section/footer');
