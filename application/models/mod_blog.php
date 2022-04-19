@@ -1,6 +1,10 @@
 <?php
 class Mod_blog extends CI_Model {
 
+    public function __construct(){
+		parent::__construct();
+		
+	}
     
     function select_all(){
         return $this->db->get('artikel');
