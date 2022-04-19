@@ -1,6 +1,7 @@
 <?php
-class mod_blog extends CI_Model {
+class Mod_blog extends CI_Model {
 
+    
     function select_all(){
         return $this->db->get('artikel');
     }

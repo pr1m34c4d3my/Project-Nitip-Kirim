@@ -79,14 +79,6 @@ class Home extends CI_Controller {
 		$this->load->view('section/footer');
 	}
 
-	public function detail()
-	{
-		
-		$id=$this->uri->segment(3);
-		$data['artikel']=$this->mod_blog->select_one($id)->row_array();
-		$this->load->view('section/header');
-		$this->load->view('front/news-detail',$data);
-		$this->load->view('section/footer');
-	}
+	
 	
 }
