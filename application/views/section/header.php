@@ -126,16 +126,16 @@
           <ul class='nav navbar-nav main-menu'>
             <li><a href='<?php echo base_url(); ?>' class='transition'>BERANDA</a></li>
             <li><a href='' class='transition'>ESTIMASI</a></li>
-            <li><a href='<?php echo base_url(); ?>about-us' class='transition'>TENTANG KAMI</a></li>
+            <li><a href='<?php echo base_url('/about-us'); ?>' class='transition'>TENTANG KAMI</a></li>
             <li class='dropdown'> <a class='dropdown-toggle' data-toggle='dropdown' href='#'>LAYANAN</a>
               <ul class='dropdown-menu' role='menu'>
-                <li><a href='<?php echo base_url(); ?>nitip-export' class='transition'>NITIP EXPORT</a></li>
-                <li><a href='<?php echo base_url(); ?>nitip-import' class='transition'>NITIP IMPORT</a></li>
-                <li><a href='<?php echo base_url(); ?>nitip-nusantara' class='transition'>NITIP NUSANTARA</a></li>
+                <li><a href='<?php echo base_url('/nitip-export'); ?>' class='transition'>NITIP EXPORT</a></li>
+                <li><a href='<?php echo base_url('/nitip-import'); ?>' class='transition'>NITIP IMPORT</a></li>
+                <li><a href='<?php echo base_url('/nitip-nusantara'); ?>' class='transition'>NITIP NUSANTARA</a></li>
               </ul>
             </li>
-            <li><a href='<?php echo base_url(); ?>news' class='transition'>ARTIKEL</a></li>
-            <li><a href='<?php echo base_url(); ?>contact' class='transition'>HUBUNGI KAMI</a></li>
+            <li><a href='<?php echo base_url('/news'); ?>' class='transition'>ARTIKEL</a></li>
+            <li><a href='<?php echo base_url('/contact'); ?>' class='transition'>HUBUNGI KAMI</a></li>
           </ul>
           <ul class='nav navbar-nav social-nav visible-lg visible-xs'>
             <li><a href='#' data-toggle='tooltip' data-placement='top' title='Facebook'><i class='ion-social-facebook'></i></a></li>
