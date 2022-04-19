@@ -19,10 +19,12 @@
 
           <?php
         echo "
-        <figure class='post-image'> <span class='post-date'>".$artikel['date']."</span> <img src='".$artikel['img']."' alt='Image'></figure>
+        <figure class='post-image'> <span class='post-date'>".$artikel['date']."</span> 
+        <img src=".base_url('images/') . 'news-image3.jpg'." alt='Image'>
+        </figure>
         <h3 class='post-title'>".$artikel['judul']."</h3>
         <p class='post-text'>".$artikel['isi_artikel']."</p>
-       
+        <span class='post-link'>".anchor('news','BACK')."</span><br>
         ";
           ?>
         
