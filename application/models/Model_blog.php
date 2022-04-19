@@ -1,5 +1,5 @@
 <?php
-class Mod_blog extends CI_Model {
+class Model_blog extends CI_Model {
 
     public function __construct(){
 		parent::__construct();
