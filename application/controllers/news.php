@@ -5,14 +5,14 @@ class News extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('mod_blog');
+		$this->load->model('Mod_blog');
 	}
 	
 	public function detail()
 	{
 		
 		$id=$this->uri->segment(3);
-		$data['artikel']=$this->mod_blog->select_one($id)->row_array();
+		$data['artikel']=$this->Mod_blog->select_one($id)->row_array();
 		$this->load->view('section/header');
 		$this->load->view('front/news-detail',$data);
 		$this->load->view('section/footer');
