@@ -59,7 +59,7 @@ $route['nitip-nusantara'] = 'Home/nitipnusantara';
 
 $route['contact'] = 'Home/contact';
 $route['detail'] = 'news/detail';
-$route['news'] = 'news';
+
 
 $route['news'] = 'Home/news';
 
