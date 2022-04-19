@@ -7,13 +7,13 @@
 <title>Nitip Kirim</title>
 <meta name='author' content='Nitip Kirim'>
 <meta name='description' content='Nitip Kirim'>
-<meta name='keywords' content='logistic, transportation, package, delivery, cargo, carousel, post, moving, caring'>
+<meta name='keywords' content='logistic, transportation, package, delivery, cargo, carousel, post, moving, caring,logsiktik, pengiriman barang, export, import'>
 
 <!-- SOCIAL MEDIA META -->
-<meta property='og:description' content='#'>
+<meta property='og:description' content='logsiktik, pengiriman, barang, export, import'>
 <meta property='og:image' content='#'>
-<meta property='og:site_name' content='SHIPPER'>
-<meta property='og:title' content='SHIPPER'>
+<meta property='og:site_name' content='logsiktik, pengiriman, barang, export, import'>
+<meta property='og:title' content='logsiktik, pengiriman, barang, export, import'>
 <meta property='og:type' content='website'>
 <meta property='og:url' content='#>
 
@@ -23,7 +23,7 @@
 <link href='ico/apple-touch-icon-114-precomposed.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
 <link href='ico/apple-touch-icon-72-precomposed.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
 <link href='ico/apple-touch-icon-57-precomposed.png' rel='apple-touch-icon-precomposed'>
-<link href='ico/favicon.png' rel='shortcut icon'>
+<link href='<?= base_url('images/') . 'logo-baru.png'?>' rel='shortcut icon'>
 
 <!-- CSS FILES -->
 <link href='<?= base_url('css/') . 'main.css'; ?>' rel='stylesheet'>
