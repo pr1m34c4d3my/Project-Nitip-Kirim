@@ -70,23 +70,23 @@ class Home extends CI_Controller {
     }
 
 	public function news()
-
-    {
+	{
 		$data['page_title'] = "Artikel";
 		$data['page'] = "artikel";
 		$data['list_artikel']=$this->mod_blog->select_all();
 		$this->load->view('section/header');
 		$this->load->view('front/news',$data);
 		$this->load->view('section/footer');
-    }
+	}
 
 	public function detail()
 	{
 		
 		$id=$this->uri->segment(3);
 		$data['artikel']=$this->mod_blog->select_one($id)->row_array();
-		
-		$this->load->view('front/detail',$data);
-		
+		$this->load->view('section/header');
+		$this->load->view('front/news-detail',$data);
+		$this->load->view('section/footer');
 	}
+	
 }

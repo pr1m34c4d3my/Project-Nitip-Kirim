@@ -56,8 +56,13 @@ $route['about-us'] = 'Home/tentang';
 $route['nitip-export'] = 'Home/nitipexport';
 $route['nitip-import'] = 'Home/nitipimport';
 $route['nitip-nusantara'] = 'Home/nitipnusantara';
+
 $route['contact'] = 'Home/contact';
 $route['detail'] = 'news/detail';
 $route['news'] = 'news';
+
+$route['news'] = 'Home/news';
+
+
 
 

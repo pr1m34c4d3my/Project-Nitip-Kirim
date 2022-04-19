@@ -8,17 +8,6 @@ class News extends CI_Controller {
 		$this->load->model('mod_blog');
 	}
 	
-
-	public function index()
-	{
-		$data['page_title'] = "Artikel";
-		$data['page'] = "artikel";
-		$data['list_artikel']=$this->mod_blog->select_all();
-		$this->load->view('section/header');
-		$this->load->view('front/news',$data);
-		$this->load->view('section/footer');
-	}
-
 	public function detail()
 	{
 		
