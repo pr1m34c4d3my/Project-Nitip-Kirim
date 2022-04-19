@@ -513,7 +513,7 @@ footer{ width:100%; float:left;}
 .slider .fixed-form form input[type="text"].datepicker { width:110px; background:none; color:#fff; border-radius:0;}
 .slider .fixed-form form ::-webkit-input-placeholder { color:#fff; } :-moz-placeholder { color: #fff; } ::-moz-placeholder {color:#fff; } :-ms-input-placeholder { color:#fff; }
 .slider .fixed-form form button[type="submit"]{ background:#ffba00;}
-.slider .main-slider .slide1{ opacity: 10%; width:100%; height:800px; background:url(../images/SLIDE.jpg) center no-repeat; background-size: cover;}
+.slider .main-slider .slide1{ opacity: 10%; width:100%; height:800px; background:url(../images/SLIDE1.jpg) center no-repeat; background-size: cover;}
 .slider .main-slider .slide2{ width:100%; height: 800px; background:url(../images/slide2.jpg) center no-repeat; background-size:cover;}
 .slider .main-slider .slide3{ width:100%; height:800px; background:url(../images/banner2.png) center no-repeat; background-size:cover;}
 
