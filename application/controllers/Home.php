@@ -5,7 +5,7 @@ class Home extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('mod_blog');
+		
 	}
 	
 
@@ -73,6 +73,7 @@ class Home extends CI_Controller {
 	{
 		$data['page_title'] = "Artikel";
 		$data['page'] = "artikel";
+		$this->load->model('mod_blog');
 		$data['list_artikel']=$this->mod_blog->select_all();
 		$this->load->view('section/header');
 		$this->load->view('front/news',$data);
