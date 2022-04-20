@@ -606,9 +606,9 @@ footer{ width:100%; float:left;}
 .steps-features{ width:100%; float:left; margin-top:30px;}
 .steps-features .spacing{ padding:0; margin:0;}
 .steps-features .step-box{ width:100%; float:left; padding:26px; background-color:#124ced; background-repeat:no-repeat; background-position:20px 0; background-size:cover;}
-.steps-features .step-box.bg-1{background-image:url(../images/steps-image1.png);}
-.steps-features .step-box.bg-2{background-image:url(../images/steps-image2.png);}
-.steps-features .step-box.bg-3{background-image:url(../images/steps-image3.png);}
+.steps-features .step-box.bg-1{background-image:url(../images/EXPORT.png);}
+.steps-features .step-box.bg-2{background-image:url(../images/IMPORT.png);}
+.steps-features .step-box.bg-3{background-image:url(../images/DOMESTIK.png);}
 .steps-features .step-box{-webkit-transition: .15s ease-in-out;-moz-transition: .15s ease-in-out;-ms-transition: .15s ease-in-out; -o-transition: .15s ease-in-out; transition: .15s ease-in-out;}
 .steps-features .step-box:hover{ background-position:0 0;}
 .steps-features .step-box:hover a:after{ width:100%;}
