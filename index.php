@@ -54,7 +54,17 @@
  * NOTE: If you change these, also change the error_reporting() code below
  */
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
-
+	
+if (!file_exists(".htaccess")) {
+    echo ".htaccess file does not exist on main directory of your site. You can find this file in the main directory of script files. You need to upload this file to your site.<br>";
+    echo "Depending on the operating system you are using, such setting files may be hidden in your computer. In this case, you may not see this file.<br><br>";
+    echo "If you can't see this file, you can create a new file named \".htaccess\" in the main directory of your site and you can paste the following codes to your .htaccess file.<br><br>";
+    echo "<strong>RewriteEngine On<br>";
+    echo "RewriteCond %{REQUEST_FILENAME} !-f<br>";
+    echo "RewriteCond %{REQUEST_FILENAME} !-d<br>";
+    echo "RewriteRule ^(.*)$ index.php?/$1 [L]</strong>";
+    exit();
+}
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -110,7 +120,7 @@ switch (ENVIRONMENT)
  * use an absolute (full) server path.
  * For more info please see the user guide:
  *
- * https://codeigniter.com/userguide3/general/managing_apps.html
+ * https://codeigniter.com/user_guide/general/managing_apps.html
  *
  * NO TRAILING SLASH!
  */

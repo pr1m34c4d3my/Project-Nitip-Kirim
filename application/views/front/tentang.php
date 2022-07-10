@@ -10,7 +10,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <h4 class="section-title"><span>01</span>NITIP KIRIM </h4>
+          <h4 class="section-title">NITIP KIRIM </h4>
         </div>
         <!-- end col-12 -->
         <div class="col-md-8 col-sm-12">
@@ -32,7 +32,7 @@
           <div class="about-features">
             <div class="row">
               <div class="col-xs-12">
-                <h4 class="section-title"><span>02</span> JASA PENGIRIMAN</h4>
+                <h4 class="section-title">JASA PENGIRIMAN</h4>
               </div>
               <!-- end col-12 -->
               <div class="col-md-6 col-sm-6"> <i class="ion-android-plane"></i>
@@ -62,12 +62,12 @@
         </div>
         <!-- end col-8 -->
         <div class="col-md-4">
-          <figure class="thumb-image"><img src="images/image1.jpg" alt="Image">
+          <figure class="thumb-image"><img src="images/logo-baru.png" alt="Image">
             <figcaption>Nitip Kirim</figcaption>
           </figure>
           
           <!-- end pdf-catalog --> 
-          <img src="images/delivery-trucks.jpg" alt="Image"> </div>
+          <img src="images/SLIDE1.jpg" alt="Image"> </div>
         <!-- end col-4 --> 
       </div>
       <!-- end row --> 
@@ -83,32 +83,32 @@
           <ul>
             <li>
               <figure>
-                <h5><img src="images/logo1.jpg" alt="Image"></h5>
+                <h5><img src="images/1.jpg" alt="Image"></h5>
               </figure>
             </li>
             <li>
               <figure>
-                <h5><img src="images/logo2.jpg" alt="Image"></h5>
+                <h5><img src="images/2.jpg" alt="Image"></h5>
               </figure>
             </li>
             <li>
               <figure>
-                <h5><img src="images/logo3.jpg" alt="Image"></h5>
+                <h5><img src="images/3.jpg" alt="Image"></h5>
               </figure>
             </li>
             <li>
               <figure>
-                <h5><img src="images/logo4.jpg" alt="Image"></h5>
+                <h5><img src="images/4.jpg" alt="Image"></h5>
               </figure>
             </li>
             <li>
               <figure>
-                <h5><img src="images/logo5.jpg" alt="Image"></h5>
+                <h5><img src="images/5.jpg" alt="Image"></h5>
               </figure>
             </li>
             <li>
               <figure>
-                <h5><img src="images/logo6.jpg" alt="Image"></h5>
+                <h5><img src="images/6.jpg" alt="Image"></h5>
               </figure>
             </li>
           </ul>
@@ -122,7 +122,7 @@
   <section class="about-intro parent">
     <div class="left-side">
       <div class="content-box">
-        <h3 class="section-title"><span>04</span>Tentang Nitip Kirim</h3>
+        <h3 class="section-title">Tentang Nitip Kirim</h3>
         <p>Kami memiliki Team yang berpengalaman melakukan pengiriman Ekpor dan Import yang siap melayani anda.
           Wilayah yang dapat kami layani yaitu seluruh Indonesia dari Sabang, sampai Merauke.
           Apabila memiliki kerabat diluar negri, khususnya TKI yang bekerja di luar negri yang ingin anda kirimkan barang nya,
@@ -140,9 +140,38 @@
       <!-- end content-box --> 
     </div>
     <!-- end left-side -->
-    <div class="right-side" data-stellar-background-ratio="0.5">
+    <div class="right-side">
       <div class="overlay parent text-center">
-        <div>DISINI BISA FOTO ATAU VIDEO</div>
+        <div>
+              <video autoplay muted loop controls id="myVideo">
+              <source src="images/lagi.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+              
+              <style type="text/css">
+                #myVideo {
+  right: 0;
+  bottom: 0;
+  min-width: 70%; 
+  min-height: 70%;
+}
+              </style>
+
+              <script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+        </div>
       </div>
     </div>
     <!-- end left-side --> 

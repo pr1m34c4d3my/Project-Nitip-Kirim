@@ -10,18 +10,18 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <h4 class="section-title"><span>01</span>NITIP EXPORT</h4>
+          <h4 class="section-title">NITIP EXPORT</h4>
         </div>
         <!-- end col-12 -->
         <div class="col-md-9">
         <p>Nitip Export adalah layanan pengiriman barang dari Indonesia ke seluruh dunia, yang dimana layanan tersebut adalah membantu customer untuk melakukan pengiriman barang dari Indonesia ke Negara tujuan sampai dengan alamat yang dituju tanpa harus keluar rumah, sesuai prosedur yang ada dari Negara asal dan Negara tujuan.</p>
          
-          <figure class="image"><img src="images/news-image4.jpg" alt="Image"></figure>
+          <figure class="image"><img src="images/news3.jpg" alt="Image"></figure>
           <p>Jika ingin bertanya atau berkonsultasi, kami sangat senang untuk membantu anda.
              Bisa hubungi Admin kami dengan klik tombol Whatsapp.</p>
           <div class="row other-features">
             <div class="col-xs-12">
-              <h4 class="section-title"><span>02</span> JASA PENGIRIMAN</h4>
+              <h4 class="section-title">JASA PENGIRIMAN</h4>
             </div>
             <!-- end col-12 -->
             <div class="col-xs-12"> <i class="ion-android-plane"></i>
@@ -50,11 +50,11 @@
         <div class="col-md-3">
           <aside class="services-sidebar">
             <ul role="menu">
-              <li class="current"><a href="Nitipexport" class="transition">NITIP EXPORT</a></li>
-              <li><a href="Nitipimport" class="transition">NITIP IMPORT</a></li>
-              <li><a href="Nitipnusantara" class="transition">NITIP NUSANTARA</a></li>
+              <li class="current"><a href="<?php echo base_url('/nitip-export'); ?>" class="transition">NITIP EXPORT</a></li>
+                <li><a href="<?php echo base_url('/nitip-import'); ?>" class="transition">NITIP IMPORT</a></li>
+                <li><a href="<?php echo base_url('/nitip-nusantara'); ?>" class="transition">NITIP NUSANTARA</a></li>
             </ul>
-            <figure class="side-banner"><a href="#"><img src="images/side-image.jpg" alt="Image"></a></figure>
+            <figure class="side-banner"><a href="#"><img src="images/ads.jpg" alt="Image"></a></figure>
             <!-- end side-banner -->
            
           </aside>

@@ -1,76 +1,80 @@
-<!doctype html>
-<html lang="en">
-  <head>
-  	<title>Admin Panel Nitip Kirim</title>
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<!DOCTYPE html>
+<html>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?php echo html_escape($title); ?> - <?php echo trans("admin"); ?>&nbsp;<?php echo html_escape($this->settings->site_title); ?></title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="<?php echo get_favicon($this->visual_settings); ?>"/>
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<link rel="stylesheet" href="css/login-style.css">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/css/_all-skins.min.css">
 
-	</head>
-	<body>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login Nitip Kirim</h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-7 col-lg-5">
-					<div class="wrap">
-						<div class="img" style="background-image: url(images/bg-1.jpg);"></div>
-						<div class="login-wrap p-4 p-md-5">
-			      	<div class="d-flex">
-			      		<div class="w-100">
-			      			<h3 class="mb-4">Sign In</h3>
-			      		</div>
-								
-			      	</div>
-							<form action="<?php echo site_url('Login/ceklogin')?>" class="signin-form">
-			      		<div class="form-group mt-3">
-			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" name="username" for="username">Username</label>
-			      		</div>
-		            <div class="form-group">
-		              <input id="password-field" type="password" class="form-control" required>
-		              <label class="form-control-placeholder" name="password" for="password">Password</label>
-		              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-		            </div>
-		            <div class="form-group">
-		            	<button type="submit" name="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
-		            </div>
-		            <div class="form-group d-md-flex">
-		            	<div class="w-50 text-left">
-			            	<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="w-50 text-md-right">
-										<a href="#">Forgot Password</a>
-									</div>
+    <!-- Custom css -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/css/custom.css">
 
-									
-		            </div>
-		          </form>
-				  <a href="Home"> <p class="text-center">Back To Homepage -----></a></p>
-		        </div>
-		      </div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
-	<script src="js/login-jquery.min.js"></script>
-  <script src="js/login-popper.js"></script>
-  <script src="js/login-bootstrap.min.js"></script>
-  <script src="js/login-main.js"></script>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="<?php echo base_url(); ?>admin/login"><b><?php echo html_escape($this->settings->application_name); ?></b>&nbsp;<?php echo trans("panel"); ?></a>
+    </div><!-- /.login-logo -->
+    <div class="login-box-body">
+        <h4 class="login-box-msg"><?php echo trans("login"); ?></h4>
 
-	</body>
+        <!-- include message block -->
+        <?php $this->load->view('partials/_messages'); ?>
+
+        <!-- form start -->
+        <?php echo form_open('common_controller/admin_login_post'); ?>
+
+        <div class="form-group has-feedback">
+            <input type="email" name="email" class="form-control form-input"
+                   placeholder="<?php echo trans("placeholder_email"); ?>"
+                   value="<?php echo old('email'); ?>" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?> required>
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback">
+            <input type="password" name="password" class="form-control form-input"
+                   placeholder="<?php echo trans("placeholder_password"); ?>"
+                   value="<?php echo old('password'); ?>" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?> required>
+            <span class=" glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-8 col-xs-12">
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-4 col-xs-12">
+                <button type="submit" class="btn btn-primary btn-block btn-flat">
+                    <?php echo trans("login"); ?>
+                </button>
+            </div>
+            <!-- /.col -->
+        </div>
+
+        <?php echo form_close(); ?><!-- form end -->
+
+    </div><!-- /.login-box-body -->
+    <div class="text-center m-t-15">
+        <a class="btn btn-md" href="<?php echo lang_base_url(); ?>"><?php echo trans("btn_goto_home"); ?></a>
+    </div>
+
+</div><!-- /.login-box -->
+</body>
 </html>
-

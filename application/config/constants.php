@@ -83,3 +83,32 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+/*
+|--------------------------------------------------------------------------
+| CUSTOM CONSTANTS
+|--------------------------------------------------------------------------
+*/
+
+defined('IMG_PATH_BG_LG')      OR define('IMG_PATH_BG_LG', 'assets/img/img_bg_lg.png');
+defined('IMG_PATH_BG_MD')      OR define('IMG_PATH_BG_MD', 'assets/img/img_bg_md.png');
+defined('IMG_BASE64_1x1')      OR define('IMG_BASE64_1x1', 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+defined('IMG_BASE64_3x2')      OR define('IMG_BASE64_3x2', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=');
+defined('IMG_BASE64_283x217')      OR define('IMG_BASE64_283x217', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARsAAADZAQMAAAAqtAZpAAAAA1BMVEVHcEyC+tLSAAAAAXRSTlMAQObYZgAAAB5JREFUGBntwYEAAAAAw6D7U8/gBNUAAAAAAAAAgC8fXQABZRtuDQAAAABJRU5ErkJggg==');
+defined('IMG_BASE64_360x215')      OR define('IMG_BASE64_360x215', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAADXAQMAAAANwFmCAAAAA1BMVEVHcEyC+tLSAAAAAXRSTlMAQObYZgAAACBJREFUGBntwTEBAAAAwiD7p14KP2AAAAAAAAAAAABwESaiAAGA8Fz0AAAAAElFTkSuQmCC');
+defined('IMG_BASE64_600x460')      OR define('IMG_BASE64_600x460', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAHMAQMAAAAzt0RXAAAAA1BMVEVHcEyC+tLSAAAAAXRSTlMAQObYZgAAADhJREFUGBntwTEBAAAAwiD7p14MH2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAXYiQAAEBSA5gAAAAAElFTkSuQmCC');
+
+$root = (isset($_SERVER['HTTPS']) ? "https://" : "http://") . $_SERVER['HTTP_HOST'];
+$root .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+@require APPPATH . 'third_party/domain-parser/autoload.php';
+$domain = "";
+$result = tld_extract($root);
+if (!empty($result)) {
+    if (isset($result["hostname"]) && isset($result["suffix"])) {
+        $domain = $result["hostname"];
+        if (!empty($result["suffix"])) {
+            $domain .= "." . $result["suffix"];
+        }
+        defined('SITE_DOMAIN') OR define('SITE_DOMAIN', $domain);
+    }
+}

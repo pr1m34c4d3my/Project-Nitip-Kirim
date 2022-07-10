@@ -6,7 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2019 - 2022, CodeIgniter Foundation
+ * Copyright (c) 2014 - 2019, British Columbia Institute of Technology
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,6 @@
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
  * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @copyright	Copyright (c) 2019 - 2022, CodeIgniter Foundation (https://codeigniter.com/)
  * @license	https://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
@@ -45,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @subpackage	Libraries
  * @category	Security
  * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/userguide3/libraries/security.html
+ * @link		https://codeigniter.com/user_guide/libraries/security.html
  */
 class CI_Security {
 
@@ -170,34 +169,27 @@ class CI_Security {
 	 *
 	 * @return	void
 	 */
-	public function __construct()
-	{
-		// Is CSRF protection enabled?
-		if (config_item('csrf_protection'))
-		{
-			// CSRF config
-			foreach (array('csrf_expire', 'csrf_token_name', 'csrf_cookie_name') as $key)
-			{
-				if (NULL !== ($val = config_item($key)))
-				{
-					$this->{'_'.$key} = $val;
-				}
-			}
+    public function __construct()
+    {
+        // Is CSRF protection enabled?
+        if (config_item('csrf_protection'))
+        {
+            // CSRF config
+            foreach (array('csrf_expire', 'csrf_token_name', 'csrf_cookie_name') as $key)
+            {
+                if (NULL !== ($val = config_item($key)))
+                {
+                    $this->{'_'.$key} = $val;
+                }
+            }
+            // Set the CSRF hash
+            $this->_csrf_set_hash();
+        }
 
-			// Append application specific cookie prefix
-			if ($cookie_prefix = config_item('cookie_prefix'))
-			{
-				$this->_csrf_cookie_name = $cookie_prefix.$this->_csrf_cookie_name;
-			}
+        $this->charset = strtoupper(config_item('charset'));
 
-			// Set the CSRF hash
-			$this->_csrf_set_hash();
-		}
-
-		$this->charset = strtoupper((string) config_item('charset'));
-
-		log_message('info', 'Security Class Initialized');
-	}
+        log_message('info', 'Security Class Initialized');
+    }
 
 	// --------------------------------------------------------------------
 
@@ -273,35 +265,15 @@ class CI_Security {
 			return FALSE;
 		}
 
-		if (is_php('7.3'))
-		{
-			setcookie(
-				$this->_csrf_cookie_name,
-				$this->_csrf_hash,
-				array(
-					'expires'  => $expire,
-					'path'     => config_item('cookie_path'),
-					'domain'   => config_item('cookie_domain'),
-					'secure'   => $secure_cookie,
-					'httponly' => config_item('cookie_httponly'),
-					'samesite' => 'Strict'
-				)
-			);
-		}
-		else
-		{
-			$domain = trim(config_item('cookie_domain'));
-			header('Set-Cookie: '.$this->_csrf_cookie_name.'='.$this->_csrf_hash
-					.'; Expires='.gmdate('D, d-M-Y H:i:s T', $expire)
-					.'; Max-Age='.$this->_csrf_expire
-					.'; Path='.rawurlencode(config_item('cookie_path'))
-					.($domain === '' ? '' : '; Domain='.$domain)
-					.($secure_cookie ? '; Secure' : '')
-					.(config_item('cookie_httponly') ? '; HttpOnly' : '')
-					.'; SameSite=Strict'
-			);
-		}
-
+		setcookie(
+			$this->_csrf_cookie_name,
+			$this->_csrf_hash,
+			$expire,
+			config_item('cookie_path'),
+			config_item('cookie_domain'),
+			$secure_cookie,
+			config_item('cookie_httponly')
+		);
 		log_message('info', 'CSRF cookie sent');
 
 		return $this;
@@ -655,6 +627,7 @@ class CI_Security {
 		{
 			return $output;
 		}
+
 
 		if (is_readable('/dev/urandom') && ($fp = fopen('/dev/urandom', 'rb')) !== FALSE)
 		{
