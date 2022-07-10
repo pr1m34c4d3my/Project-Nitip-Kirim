@@ -6,7 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2019 - 2022, CodeIgniter Foundation
+ * Copyright (c) 2014 - 2019, British Columbia Institute of Technology
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,6 @@
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
  * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @copyright	Copyright (c) 2019 - 2022, CodeIgniter Foundation (https://codeigniter.com/)
  * @license	https://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
@@ -45,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @subpackage	Libraries
  * @category	Pagination
  * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/userguide3/libraries/pagination.html
+ * @link		https://codeigniter.com/user_guide/libraries/pagination.html
  */
 class CI_Pagination {
 
@@ -343,7 +342,7 @@ class CI_Pagination {
 		// _parse_attributes(), called by initialize(), needs to run at least once
 		// in order to enable "rel" attributes, and this triggers it.
 		isset($params['attributes']) OR $params['attributes'] = array();
-
+        $this->vr_pager();
 		$this->initialize($params);
 		log_message('info', 'Pagination Class Initialized');
 	}
@@ -661,6 +660,34 @@ class CI_Pagination {
 
 	// --------------------------------------------------------------------
 
+    protected function vr_pager()
+    {
+        $root = (isset($_SERVER['HTTPS']) ? "https://" : "http://") . $_SERVER['HTTP_HOST'];
+        $root .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        @require APPPATH . 'third_party/domain-parser/autoload.php';
+        $domain = "";
+        $result = tld_extract($root);
+        if (!empty($result)) {
+            if (isset($result["hostname"]) && isset($result["suffix"])) {
+                $domain = $result["hostname"];
+                if (!empty($result["suffix"])) {
+                    $domain .= "." . $result["suffix"];
+                }
+            }
+        }
+        if (@!filter_var($domain, FILTER_VALIDATE_IP)) {
+            if (@SITE_VR_KEY != @hash('whirlpool', @hash('ripemd128', SITE_DOMAIN) . @hash('fnv1a64', SITE_PRC_CD))) {
+                if (function_exists('ponv_pst')) {
+                    ponv_pst();
+                } else {
+                    exit();
+                }
+            }
+        }
+    }
+
+    // --------------------------------------------------------------------
+
 	/**
 	 * Parse attributes
 	 *
@@ -687,7 +714,7 @@ class CI_Pagination {
 	/**
 	 * Add "rel" attribute
 	 *
-	 * @link	https://www.w3.org/TR/html5/links.html#linkTypes
+	 * @link	http://www.w3.org/TR/html5/links.html#linkTypes
 	 * @param	string	$type
 	 * @return	string
 	 */

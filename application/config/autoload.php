@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | 4. Helper files
 | 5. Custom config files
 | 6. Language files
-| 7. Models
+| 7. Modelsuser_agent
 |
 */
 
@@ -58,8 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','session');
-
+$autoload['libraries'] = array('database', 'form_validation', 'session', 'user_agent', 'pagination');
 /*
 | -------------------------------------------------------------------
 |  Auto-load Drivers
@@ -89,7 +88,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url', 'security', 'file', 'text', 'custom', 'post');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +131,8 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array();
+$autoload['model'] = array('auth_model', 'settings_model', 'visual_settings_model', 'page_model', 'post_model', 'post_admin_model',
+    'ad_model', 'category_model', 'tag_model', 'post_file_model', 'comment_model',
+    'gallery_category_model', 'gallery_model', 'reading_list_model', 'contact_model', 'newsletter_model',
+    'widget_model', 'poll_model', 'navigation_model', 'rss_model', 'file_model', 'language_model', 'reaction_model', 'profile_model', 'post_item_model',
+    'quiz_model');
