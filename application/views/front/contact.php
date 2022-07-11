@@ -10,21 +10,35 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <h4 class="section-title"><span>01</span>INFO ALAMAT </h4>
+          <h4 class="section-title">INFO ALAMAT </h4>
         </div>
         <!-- end col-12 -->
-        <div class="col-md-4 col-sm-4">
+        <div class="col-md-4" style="align-items:center;">
           <address>
           <h5>HEADQUARTER</h5>
           <p>Jl. H. Kasam No. 16A
-      RT.004/RW.04 
-      Kel. Meruya Selatan
-      Kec. Kembangan
-      Jakarta Barat - 11650</p>
+              RT.004/RW.04 
+              Kel. Meruya Selatan
+              Kec. Kembangan
+              Jakarta Barat - 11650</p>
           <p>t: +62 813 8936 9998<br>
            </p>
           <p>e: <a href="#">admin@nitipkirim.com</a></p>
           <p>maps: <a href="https://maps.app.goo.gl/NCh7XhiEYCE97b7QA">KLIK DISINI</a></p>
+          </address>
+        </div>
+        <div class="col-md-4">
+          <address>
+          <h5>Kantor Cabang</h5>
+          <p>Jl. Raya Condet Gg. H. Awab 
+              No.58 RT.005/RW.03 
+              Kel. Batu Ampar
+              Kec. Kramatjati
+              Jakarta Timur - 13520</p>
+          <p>t: +62 813 8936 9998<br>
+           </p>
+          <p>e: <a href="#">admin@nitipkirim.com</a></p>
+          <p>maps: <a href="https://maps.app.goo.gl/5AGDtT9iirjBMKgw5">KLIK DISINI</a></p>
           </address>
         </div>
         	
