@@ -1342,4 +1342,57 @@ if (!function_exists('is_bot')) {
         return false;
     }
 }
+
+function getDataPriceDomestic($fromCodeOne='',$fromCodeTwo='',$fromLabel='',$toCodeOne='',$toCodeTwo='',$toLabel='',$weight='',$service='')
+{
+
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+      CURLOPT_URL => 'https://api.ninjavan.co/ID/1.0/public/price',
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => '',
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => 'POST',
+      CURLOPT_POSTFIELDS =>'{
+      "weight": '.$weight.',
+      "service_level": "'.$service.'",
+      "from": {
+        "l1_tier_code": "'.$fromCodeOne.'",
+        "l2_tier_code": "'.$fromCodeTwo.'"
+      },
+      "to": {
+        "l1_tier_code": "'.$toCodeOne.'",
+        "l2_tier_code": "'.$toCodeTwo.'"
+      }
+    }',
+      CURLOPT_HTTPHEADER => array(
+        'Content-Type: application/json',
+      ),
+    ));
+
+    $response = curl_exec($curl);
+    curl_close($curl);
+
+    $resultArray = json_decode($response,true);
+    $param = array(
+        'total_fee'     =>  'Rp. '.number_format($resultArray['data']['total_fee'],2,".",","),
+        'fromCodeOne' => $fromCodeOne,
+        'fromCodeTwo' => $fromCodeTwo,
+        'fromLabel'     => $fromLabel,
+        'toCodeOne' => $toCodeOne,
+        'toCodeTwo' => $toCodeTwo,
+        'toLabel'     => $toLabel,
+        'weight' => $weight,
+        'service'   =>  $service,
+    );
+
+    $result = $param;
+
+    return $result;
+
+}
 ?>

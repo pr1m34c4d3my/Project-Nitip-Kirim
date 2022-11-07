@@ -70,6 +70,7 @@ $route['nitip-import'] = 'Home/nitipimport';
 $route['nitip-nusantara'] = 'Home/nitipnusantara';
 $route['tarif-ekonomi'] = 'Home/tarifekonomi';
 $route['tarif-prioritas'] = 'Home/tarifprioritas';
+$route['domestik'] = 'Domestik';
 $route['contact'] = 'Home/contact';
 $route['news'] = 'Home/news';
 $route['track'] = 'Home/track';

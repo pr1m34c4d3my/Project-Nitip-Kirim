@@ -12,9 +12,9 @@
     
       <div class="row text-center" id="estimasi"><table class="table table-striped table-bordered table-estimasi">
         <thead class="text-uppercase thead-light">
-        <tr>
+            <tr>
                 <th>Berat <br> <sub>(Kilogram)</sub></th>
-                <th><img data-src="https://kilo.id/frontend/web/images/eco-logo.png" alt="logo-ECO" title="logo-ECO" class=" lazyloaded" width="100px" height="100%" src="https://kilo.id/frontend/web/images/eco-logo.png"><br>4-7 hari</th>
+                <th><img data-src="https://kilo.id/frontend/web/images/eco-logo.png" alt="logo-ECO" title="logo-ECO" class=" lazyloaded" width="100px" height="100%" src="https://kilo.id/frontend/web/images/eco-logo.png"><br>3-5 hari</th>
                 <th><img data-src="https://kilo.id/frontend/web/images/priority-logo.png" alt="logo-PRIORITY" title="logo-PRIORITY" class=" lazyloaded" width="100px" height="100%" src="https://kilo.id/frontend/web/images/priority-logo.png"><br>3-5 hari</th>
             </tr>
         </thead>

@@ -18,6 +18,31 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="#>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-229131418-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-229131418-1');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Ads: 10886286798 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10886286798"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-10886286798');
+</script>
+
+<!-- Event snippet for View Content conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-10886286798/fJgqCIe00r0DEM6b_sYo'});
+</script>
+
 
 <!-- FAVICON FILES -->
 <link href="ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
@@ -25,6 +50,7 @@
 <link href="ico/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
 <link href="ico/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon-precomposed">
 <link href="ico/favicon.png" rel="shortcut icon">
+<script src="js/jquery.min.js"></script> 
 
 <!-- CSS FILES -->
 <link href="css/main.css" rel="stylesheet">
@@ -154,7 +180,9 @@
                 <!-- end col-2 -->
                 <div class="col-md-3 col-sm-4 hidden-xs"> <i class="icon-map-pin"></i>
                   <h6>Lokasi Kami<br>
-                    <span>Meruya Selatan Jakarta Barat - 11650</span></h6>
+                    <span>Meruya Selatan & Condet - DKI Jakarta</span>
+                    <span>Sayati, Margahayu - Bandung</span>
+                    </h6>
                 </div>
                 <!-- end col-2 -->
                 <div class="col-md-3 hidden-sm hidden-xs"> <i class="icon-chat"></i>
@@ -171,6 +199,7 @@
           <ul class="nav navbar-nav main-menu">
             <li><a href="<?php echo base_url(); ?>" class="transition">BERANDA</a></li>
             <li><a href="<?php echo base_url('/track'); ?>" class="transition">TRACK</a></li>
+            <li><a href="<?php echo base_url('/domestik'); ?>" class="transition">DOMESTIK</a></li>
             <li><a href="<?php echo base_url('/about-us'); ?>" class="transition">TENTANG KAMI</a></li>
             <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">LAYANAN</a>
               <ul class="dropdown-menu" role="menu">
