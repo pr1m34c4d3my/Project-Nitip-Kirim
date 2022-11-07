@@ -41,6 +41,20 @@
           <p>maps: <a href="https://maps.app.goo.gl/5AGDtT9iirjBMKgw5">KLIK DISINI</a></p>
           </address>
         </div>
+        <div class="col-md-4">
+          <address>
+          <h5>Kantor Cabang</h5>
+          <p>Komplek sukamenak indah Blok RE 19 
+Rt : 004   Rw : 001
+              Kel. Sayati
+              Kec. Margahayu
+              Bandung - 40288</p>
+          <p>t: +62 813 8936 9998<br>
+           </p>
+          <p>e: <a href="#">admin@nitipkirim.com</a></p>
+          <p>maps: <a href="https://maps.app.goo.gl/5AGDtT9iirjBMKgw5">KLIK DISINI</a></p>
+          </address>
+        </div>
         	
       	<div class="column">
             	
